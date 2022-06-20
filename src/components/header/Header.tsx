@@ -1,9 +1,8 @@
-import React from "react";
-import Logo from "../../img/logo.png";
 import { MdShoppingBasket } from "react-icons/md";
-import Avatar from "../../img/avatar.png";
-import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import Avatar from "../../img/avatar.png";
+import Logo from "../../img/logo.png";
+import { signByGoogle } from "../../services/firebaseAuth";
 
 const Header = () => {
   return (
@@ -36,12 +35,12 @@ const Header = () => {
               <p className="text-xs text-white font-semibold">3</p>
             </div>
           </li>
-          <li>
+          <li className="relative">
             <img
-              // whileTap={{ scale: 0.6 }}
+              // onClick={() => signByGoogle()}
               src={Avatar}
               className="w-10 min-w-[40px] active:scale-75 duration-100 ease-out  shadow-sm hover:shadow-md rounded-full cursor-pointer"
-              alt=""
+              alt="avatar"
             />
           </li>
         </ul>
